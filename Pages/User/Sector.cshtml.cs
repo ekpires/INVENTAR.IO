@@ -1,3 +1,4 @@
+using INVENTAR.IO.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -6,7 +7,7 @@ namespace INVENTAR.IO.Pages.User
     public class SectorModel : PageModel
     {
         [BindProperty]
-        public string Sector { get; set; }
+        public Sector Sector { get; set; }
 
         public void OnGet()
         {
