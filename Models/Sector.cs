@@ -4,8 +4,7 @@ namespace INVENTAR.IO.Models
 {
     public class Sector
     {
-        [Required]
-        [DisplayColumn("Sector")]
-        public string SectorName { get; set; }
+        [Key]
+        public string SectorName { get; set; } = string.Empty;
     }
 }
