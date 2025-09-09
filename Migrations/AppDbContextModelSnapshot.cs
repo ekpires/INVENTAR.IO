@@ -21,14 +21,14 @@ namespace INVENTAR.IO.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("INVENTAR.IO.Models.Sector", b =>
+            modelBuilder.Entity("INVENTAR.IO.Models.Departments", b =>
                 {
-                    b.Property<string>("SectorName")
+                    b.Property<string>("DepartmentName")
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("SectorName");
+                    b.HasKey("DepartmentName");
 
-                    b.ToTable("Sector");
+                    b.ToTable("Departments");
                 });
 #pragma warning restore 612, 618
         }

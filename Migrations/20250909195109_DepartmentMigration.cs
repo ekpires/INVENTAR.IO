@@ -5,20 +5,20 @@
 namespace INVENTAR.IO.Migrations
 {
     /// <inheritdoc />
-    public partial class MigrationInventario : Migration
+    public partial class DepartmentMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Sector",
+                name: "Departments",
                 columns: table => new
                 {
-                    SectorName = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    DepartmentName = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Sector", x => x.SectorName);
+                    table.PrimaryKey("PK_Departments", x => x.DepartmentName);
                 });
         }
 
@@ -26,7 +26,7 @@ namespace INVENTAR.IO.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Sector");
+                name: "Departments");
         }
     }
 }
