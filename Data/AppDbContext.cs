@@ -13,6 +13,6 @@ namespace INVENTAR.IO.Data
         {
         }
 
-        public virtual DbSet<Sector> Sector { get; set; }
+        public virtual DbSet<Departments> Departments { get; set; }
     }
 }

@@ -1,0 +1,16 @@
+﻿@page
+@model INVENTAR.IO.Pages.User.Department.CreateModel
+@{
+    ViewData["Title"] = "Department";
+}
+
+<h1>@ViewData["Title"]</h1>
+<br />
+
+<form method="post">
+    <div class="mb-3">
+        <label for="DepartmentExample" class="form-label">New department</label>
+        <input type="text" asp-for="Department.DepartmentName" class="form-control" @* placeholder="Department" *@ style="text-transform: uppercase;" />
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>

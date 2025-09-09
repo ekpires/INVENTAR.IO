@@ -2,9 +2,9 @@
 
 namespace INVENTAR.IO.Models
 {
-    public class Sector
+    public class Departments
     {
         [Key]
-        public string SectorName { get; set; } = string.Empty;
+        public string DepartmentName { get; set; } = string.Empty;
     }
 }
