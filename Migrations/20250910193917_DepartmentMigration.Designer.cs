@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace INVENTAR.IO.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250909195109_DepartmentMigration")]
+    [Migration("20250910193917_DepartmentMigration")]
     partial class DepartmentMigration
     {
         /// <inheritdoc />
@@ -26,10 +26,20 @@ namespace INVENTAR.IO.Migrations
 
             modelBuilder.Entity("INVENTAR.IO.Models.Departments", b =>
                 {
+                    b.Property<int>("DepartmentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DepartmentId"));
+
                     b.Property<string>("DepartmentName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("DepartmentName");
+                    b.HasKey("DepartmentId");
+
+                    b.HasIndex("DepartmentName")
+                        .IsUnique();
 
                     b.ToTable("Departments");
                 });

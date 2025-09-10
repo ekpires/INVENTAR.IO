@@ -14,12 +14,20 @@ namespace INVENTAR.IO.Migrations
                 name: "Departments",
                 columns: table => new
                 {
+                    DepartmentId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     DepartmentName = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Departments", x => x.DepartmentName);
+                    table.PrimaryKey("PK_Departments", x => x.DepartmentId);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Departments_DepartmentName",
+                table: "Departments",
+                column: "DepartmentName",
+                unique: true);
         }
 
         /// <inheritdoc />
