@@ -4,26 +4,32 @@
     ViewData["Title"] = "Department";
 }
 
-<h3>Department</h3>
-<hr />
-<a class="btn btn-primary">Add</a>
-<br />
-<table class="table table-hover table-responsive">
-    <thead>
-        <tr>
-            <th scope="col">@Html.DisplayNameFor(model => model.Departments[0].DepartmentName)</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var department in Model.Departments)
-        {
-            <tr>
-                <td>@Html.DisplayFor(model => department.DepartmentName)</td>
-                <td align ="right">
-                    <a class="btn btn-info">Edit</a>
-                    <a class="btn btn-danger">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+
+
+<div class="container">
+    <div class="list-header">
+        <h3>@Html.DisplayNameFor(model => model.Departments[0].DepartmentName)</h3>
+        <a asp-page="Create" class="btn btn-theme">Add</a>
+    </div>
+    @if (TempData["Message"] != null)
+    {
+        <p class="text-danger">@TempData["Message"]</p>
+    }
+    <br />
+    <div>
+        <table class="table table-hover table-responsive">
+            <tbody>
+                @foreach (var department in Model.Departments)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(model => department.DepartmentName)</td>
+                        <td align="right">
+                            <a asp-page="./Edit" asp-route-id="@department.DepartmentId" class="btn btn-outline-theme">Edit</a>
+                            <a class="btn btn-outline-theme">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

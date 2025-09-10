@@ -28,9 +28,18 @@ namespace INVENTAR.IO.Pages.User.Department
             if (ModelState.IsValid == false)
                 return Page();
 
-            _context.Departments.Add(Department);
-            await _context.SaveChangesAsync();
-            return RedirectToPage("./Index", new { Department });
+            Department.DepartmentName = Department.DepartmentName.ToUpper();
+
+            try
+            {
+                _context.Departments.Add(Department);
+                await _context.SaveChangesAsync();
+            }
+            catch
+            {
+                TempData["Message"] = $"{Department.DepartmentName} already exists";
+            }
+            return RedirectToPage("./Index");
         }
     }
 }
