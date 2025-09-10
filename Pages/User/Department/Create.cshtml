@@ -3,14 +3,25 @@
 @{
     ViewData["Title"] = "Department";
 }
+<div class="container">
+    <h1>@ViewData["Title"]</h1>
+    <br />
 
-<h1>@ViewData["Title"]</h1>
-<br />
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="Department.DepartmentName" class="form-label">New department</label>
+            <input type="text" asp-for="Department.DepartmentName" class="form-control" @* placeholder="Department" *@ style="text-transform: uppercase;" />
+            <span asp-validation-for="Department.DepartmentName" class="text-danger"></span>
+        </div>
+        <div>
+            <a asp-page="./Index" class="btn btn-outline-theme">Back</a>
+            <input type="submit" class="btn btn-theme" value="Create"/>
+        </div>
+    </form>
+</div>
 
-<form method="post">
-    <div class="mb-3">
-        <label for="DepartmentExample" class="form-label">New department</label>
-        <input type="text" asp-for="Department.DepartmentName" class="form-control" @* placeholder="Department" *@ style="text-transform: uppercase;" />
-    </div>
-    <button type="submit" class="btn btn-primary">Add</button>
-</form>
+@section Scripts{
+@{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
