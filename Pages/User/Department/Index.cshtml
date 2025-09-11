@@ -25,7 +25,7 @@
                         <td>@Html.DisplayFor(model => department.DepartmentName)</td>
                         <td align="right">
                             <a asp-page="./Edit" asp-route-id="@department.DepartmentId" class="btn btn-outline-theme">Edit</a>
-                            <a class="btn btn-outline-theme">Delete</a>
+                            <a asp-page="./Delete" asp-route-id="@department.DepartmentId" class="btn btn-outline-theme">Delete</a>
                         </td>
                     </tr>
                 }

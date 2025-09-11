@@ -1,0 +1,24 @@
+﻿@page
+@model INVENTAR.IO.Pages.User.Department.DeleteModel
+@{
+	ViewData[ "Title" ] = "Delete";
+}
+<div class="container">
+	<h1>Are you sure you want to delete this?</h1>
+	<br />
+	<div style="width: 30%;">
+		<div class="row justify-content-between">
+			<p class="col-4 fw-bold">@Html.DisplayNameFor( model => model.Departments.DepartmentName ):</p>
+			<p class="col-4 justify-content-end">@Html.DisplayFor( model => model.Departments.DepartmentName )</p>
+		</div>
+		<div>
+			<form method="post">
+				<input type="hidden" asp-asp-for="Departments.DepartmentId" />
+				@* <input class="form-control" id="confirmDelete" type="text" placeholder="To delete write &quot;@Html.DisplayFor( model => model.Departments.DepartmentName )&quot;" /> *@
+				<br />
+				<a asp-page="./Index" class="btn btn-outline-theme">Back</a>
+				<input @* disabled *@ type="submit" class="btn btn-theme" value="Delete" />
+			</form>
+		</div>
+	</div>
+</div>
