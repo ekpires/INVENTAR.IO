@@ -13,6 +13,12 @@ namespace INVENTAR.IO.Data
         {
         }
 
-        public virtual DbSet<Sector> Sector { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Departments>().HasKey(e => e.DepartmentId);
+            modelBuilder.Entity<Departments>().Property(e =>  e.DepartmentId).ValueGeneratedOnAdd();
+        }
+
+        public virtual DbSet<Departments> Departments { get; set; }
     }
 }

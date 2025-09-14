@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace INVENTAR.IO.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250908185859_MigrationInventario")]
-    partial class MigrationInventario
+    [Migration("20250910193917_DepartmentMigration")]
+    partial class DepartmentMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,14 +24,24 @@ namespace INVENTAR.IO.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("INVENTAR.IO.Models.Sector", b =>
+            modelBuilder.Entity("INVENTAR.IO.Models.Departments", b =>
                 {
-                    b.Property<string>("SectorName")
+                    b.Property<int>("DepartmentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DepartmentId"));
+
+                    b.Property<string>("DepartmentName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("SectorName");
+                    b.HasKey("DepartmentId");
 
-                    b.ToTable("Sector");
+                    b.HasIndex("DepartmentName")
+                        .IsUnique();
+
+                    b.ToTable("Departments");
                 });
 #pragma warning restore 612, 618
         }
