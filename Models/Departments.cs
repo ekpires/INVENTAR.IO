@@ -15,6 +15,7 @@ namespace INVENTAR.IO.Models
 
         [NotNull]
         [Required]
+        [StringLength(128)]
         [DisplayName("Department")]
         public string DepartmentName { get; set; } = string.Empty;
     }
