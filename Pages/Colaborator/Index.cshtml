@@ -1,5 +1,42 @@
 ﻿@page
 @model INVENTAR.IO.Pages.User.IndexModel
 @{
-    ViewData["Title"] = "Users";
+    ViewData["Title"] = "Colaborators";
 }
+<div class="container">
+    <div class="list-header">
+        <h3>@ViewData["Title"]</h3>
+        <a asp-page="Create" class="btn btn-theme">Add</a>
+    </div>
+    @if (TempData["Message"] != null)
+    {
+        <p class="text-danger">@TempData["Message"]</p>
+    }
+    <br />
+    <div>
+        <table class="table table-hover table-responsive">
+            <thead>
+                <tr>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Colaborators[0].ColaboratorName)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Colaborators[0].ColaboratorEmail)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Colaborators[0].Department.DepartmentName)</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                 @foreach (var department in Model.Colaborators)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(model => department.ColaboratorName)</td>
+                        <td>@Html.DisplayFor(model => department.ColaboratorEmail)</td>
+                        <td>@Html.DisplayFor(model => department.Department.DepartmentName)</td>
+                        <td align="right">
+                            <a asp-page="./Edit" asp-route-id="@department.DepartmentId" class="btn btn-outline-theme">Edit</a>
+                            <a asp-page="./Delete" asp-route-id="@department.DepartmentId" class="btn btn-outline-theme">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
