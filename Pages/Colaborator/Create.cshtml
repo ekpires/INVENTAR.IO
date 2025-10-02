@@ -1,4 +1,48 @@
 ﻿@page
 @model INVENTAR.IO.Pages.Colaborator.CreateModel
 @{
+    ViewData["Title"] = "Colaborator";
+}
+<div class="container">
+    <h1>@ViewData["Title"]</h1>
+    <br />
+
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="Colaborator.ColaboratorName" class="form-label">Colaborator name</label>
+            <input type="text" asp-for="Colaborator.ColaboratorName" class="form-control" style="text-transform: uppercase;" />
+            <span asp-validation-for="Colaborator.ColaboratorName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Colaborator.ColaboratorEmail" class="form-label">Colaborator e-mail</label>
+            <input type="text" asp-for="Colaborator.ColaboratorEmail" class="form-control" style="text-transform: lowercase;" />
+            <span asp-validation-for="Colaborator.ColaboratorEmail" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Colaborator.DepartmentId" class="form-label">Department</label>
+            <select class="form-select" aria-label="Department" asp-items="Model.Departments" asp-for="Colaborator.Department.DepartmentId" >
+            @* <select class="form-select" aria-label="Marca select" asp-items="Model.makers" asp-for="Model.Maker" name="Marca"> *@
+
+                <option>Seleziona una marca</option>
+                @* <option selected>Select department</option>
+                @{
+                    foreach (var department in Model.departments)
+                    {
+                        <option value="@department.DepartmentId">@department.DepartmentName</option>
+                    }
+                } *@
+            </select>
+            <span asp-validation-for="Colaborator.DepartmentId" class="text-danger"></span>
+        </div>
+        <div>
+            <a asp-page="./Index" class="btn btn-outline-theme">Back</a>
+            <input type="submit" class="btn btn-theme" value="Create" />
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
