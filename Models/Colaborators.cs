@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -13,13 +14,13 @@ namespace INVENTAR.IO.Models
         public int ColaboratorId { get; set; }
 
         [Required]
-        [StringLength(128)]
+        [StringLength(100)]
         [DisplayName("Name")]
         public string ColaboratorName { get; set; } = string.Empty;
 
         [Required]
         [EmailAddress]
-        [StringLength(128)]
+        [StringLength(100)]
         [DisplayName("E-mail")]
         public string ColaboratorEmail { get; set; } = string.Empty;
 

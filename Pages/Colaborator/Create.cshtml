@@ -20,17 +20,8 @@
         </div>
         <div class="mb-3">
             <label asp-for="Colaborator.DepartmentId" class="form-label">Department</label>
-            <select class="form-select" aria-label="Department" asp-items="Model.Departments" asp-for="Colaborator.Department.DepartmentId" >
-            @* <select class="form-select" aria-label="Marca select" asp-items="Model.makers" asp-for="Model.Maker" name="Marca"> *@
-
+            <select class="form-select" aria-label="Department" asp-items="Model.Departments" asp-for="Colaborator.Department.DepartmentId">
                 <option>Seleziona una marca</option>
-                @* <option selected>Select department</option>
-                @{
-                    foreach (var department in Model.departments)
-                    {
-                        <option value="@department.DepartmentId">@department.DepartmentName</option>
-                    }
-                } *@
             </select>
             <span asp-validation-for="Colaborator.DepartmentId" class="text-danger"></span>
         </div>

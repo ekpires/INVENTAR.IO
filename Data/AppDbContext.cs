@@ -16,7 +16,7 @@ namespace INVENTAR.IO.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Departments>().HasKey(e => e.DepartmentId);
-            modelBuilder.Entity<Departments>().Property(e =>  e.DepartmentId).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Departments>().Property(e => e.DepartmentId).ValueGeneratedOnAdd();
             modelBuilder.Entity<Colaborators>().HasKey(e => e.ColaboratorId);
             modelBuilder.Entity<Colaborators>().Property(e => e.ColaboratorId).ValueGeneratedOnAdd();
         }

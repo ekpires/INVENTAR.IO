@@ -16,8 +16,8 @@ namespace INVENTAR.IO.Migrations
                 {
                     ColaboratorId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ColaboratorName = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    ColaboratorEmail = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    ColaboratorName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    ColaboratorEmail = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     DepartmentId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

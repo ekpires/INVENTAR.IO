@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace INVENTAR.IO.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250916201048_DepartmentMigration")]
+    [Migration("20251002142347_DepartmentMigration")]
     partial class DepartmentMigration
     {
         /// <inheritdoc />
@@ -34,8 +34,8 @@ namespace INVENTAR.IO.Migrations
 
                     b.Property<string>("DepartmentName")
                         .IsRequired()
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("DepartmentId");
 
