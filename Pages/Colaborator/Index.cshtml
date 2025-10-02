@@ -20,11 +20,11 @@
                     <th scope="col">@Html.DisplayNameFor(model => model.Colaborators[0].ColaboratorName)</th>
                     <th scope="col">@Html.DisplayNameFor(model => model.Colaborators[0].ColaboratorEmail)</th>
                     <th scope="col">@Html.DisplayNameFor(model => model.Colaborators[0].Department.DepartmentName)</th>
-                    <th scope="col">Actions</th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
-                 @foreach (var department in Model.Colaborators)
+                @foreach (var department in Model.Colaborators)
                 {
                     <tr>
                         <td>@Html.DisplayFor(model => department.ColaboratorName)</td>

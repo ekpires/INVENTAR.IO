@@ -17,11 +17,12 @@ namespace INVENTAR.IO.Pages.User
         }
 
         public IList<Colaborators> Colaborators { get; set; } = default!;
+        public IList<Departments> Departments { get; set; } = default!;
 
         public async Task OnGetAsync()
         {
             Colaborators = await _context.Colaborators.ToListAsync();
-
+            Departments = await _context.Departments.ToListAsync();
         }
     }
 }
