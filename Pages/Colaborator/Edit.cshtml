@@ -1,0 +1,38 @@
+﻿@page
+@model INVENTAR.IO.Pages.Colaborator.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+<div class="container">
+    <h1>@ViewData["Title"]</h1>
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Colaborator.ColaboratorId" />
+        <div class="mb-3">
+            <label asp-for="Colaborator.ColaboratorName" class="form-label">@Html.DisplayNameFor(model => model.Colaborator.ColaboratorName)</label>
+            <input type="text" asp-for="Colaborator.ColaboratorName" class="form-control" style="text-transform: uppercase;" />
+            <span asp-validation-for="Colaborator.ColaboratorName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Colaborator.ColaboratorEmail" class="form-label">@Html.DisplayNameFor(model => model.Colaborator.ColaboratorEmail)</label>
+            <input type="text" asp-for="Colaborator.ColaboratorEmail" class="form-control" style="text-transform: uppercase;" />
+            <span asp-validation-for="Colaborator.ColaboratorEmail" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Colaborator.DepartmentId" class="form-label">@Html.DisplayNameFor(model => model.Colaborator.Department)</label>
+            <select class="form-select" aria-label="Department" asp-items="Model.Departments" asp-for="Colaborator.Department.DepartmentId"></select>
+            <span asp-validation-for="Colaborator.DepartmentId" class="text-danger"></span>
+        </div>
+
+        <div>
+            <a asp-page="./Index" class="btn btn-outline-theme">Back</a>
+            <input type="submit" class="btn btn-theme" value="Edit" />
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
