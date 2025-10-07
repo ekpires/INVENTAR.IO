@@ -8,7 +8,7 @@ namespace INVENTAR.IO.Pages.User.Department
 {
     public class EditModel : PageModel
     {
-        public readonly AppDbContext _context;
+        private readonly AppDbContext _context;
 
         public EditModel(AppDbContext context)
         {

@@ -24,15 +24,15 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var department in Model.Colaborators)
+                @foreach (var colaborator in Model.Colaborators)
                 {
                     <tr>
-                        <td>@Html.DisplayFor(model => department.ColaboratorName)</td>
-                        <td>@Html.DisplayFor(model => department.ColaboratorEmail)</td>
-                        <td>@Html.DisplayFor(model => department.Department.DepartmentName)</td>
+                        <td>@Html.DisplayFor(model => colaborator.ColaboratorName)</td>
+                        <td>@Html.DisplayFor(model => colaborator.ColaboratorEmail)</td>
+                        <td>@Html.DisplayFor(model => colaborator.Department.DepartmentName)</td>
                         <td align="right">
-                            <a asp-page="./Edit" asp-route-id="@department.DepartmentId" class="btn btn-outline-theme">Edit</a>
-                            <a asp-page="./Delete" asp-route-id="@department.DepartmentId" class="btn btn-outline-theme">Delete</a>
+                            <a asp-page="./Edit" asp-route-id="@colaborator.ColaboratorId" class="btn btn-outline-theme">Edit</a>
+                            <a asp-page="./Delete" asp-route-id="@colaborator.ColaboratorId" class="btn btn-outline-theme">Delete</a>
                         </td>
                     </tr>
                 }
