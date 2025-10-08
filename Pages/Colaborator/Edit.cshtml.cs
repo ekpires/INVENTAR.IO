@@ -33,21 +33,31 @@ namespace INVENTAR.IO.Pages.Colaborator
             {
                 Colaborator = colaborator;
                 Console.WriteLine(Colaborator.DepartmentId);
-                Departments = _context.Departments.Select(departments =>
-                new SelectListItem
+                Departments = _context.Departments.Select(departments => new SelectListItem
                 {
                     Text = departments.DepartmentName,
                     Value = departments.DepartmentId.ToString()
 
                 }).ToList();
+
                 return Page();
             }
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
+            
+
+            if (!ModelState.IsValid) {
+                Departments = _context.Departments.Select(departments => new SelectListItem
+                {
+                    Text = departments.DepartmentName,
+                    Value = departments.DepartmentId.ToString()
+
+                }).ToList();
+
                 return Page();
+            }
 
             Colaborator.ColaboratorName = Colaborator.ColaboratorName.ToUpper();
             Colaborator.ColaboratorEmail = Colaborator.ColaboratorEmail.ToLower();
