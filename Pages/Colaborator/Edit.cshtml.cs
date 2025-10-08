@@ -46,7 +46,7 @@ namespace INVENTAR.IO.Pages.Colaborator
 
         public async Task<IActionResult> OnPostAsync()
         {
-            
+            ModelState.Remove("Colaborator.Department");
 
             if (!ModelState.IsValid) {
                 Departments = _context.Departments.Select(departments => new SelectListItem

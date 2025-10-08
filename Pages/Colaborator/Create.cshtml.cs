@@ -41,6 +41,8 @@ namespace INVENTAR.IO.Pages.Colaborator
         public async Task<IActionResult> OnPostAsync()
         {
 
+            ModelState.Remove("Colaborator.Department");
+
             if (!ModelState.IsValid)
             {
                 TempData["Message"] = "Select a department";
@@ -57,8 +59,6 @@ namespace INVENTAR.IO.Pages.Colaborator
 
             Colaborator.ColaboratorName = Colaborator.ColaboratorName.ToUpper();
             Colaborator.ColaboratorEmail = Colaborator.ColaboratorEmail.ToLower();
-            Colaborator.DepartmentId = Colaborator.Department.DepartmentId;
-            Colaborator.Department = null;
             
             try
             {

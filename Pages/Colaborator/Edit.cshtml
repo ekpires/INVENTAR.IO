@@ -20,7 +20,7 @@
         </div>
         <div class="mb-3">
             <label asp-for="Colaborator.DepartmentId" class="form-label">@Html.DisplayNameFor(model => model.Colaborator.Department)</label>
-            <select class="form-select" aria-label="Department" asp-items="Model.Departments" asp-for="Colaborator.Department.DepartmentId"></select>
+            <select class="form-select" aria-label="Department" asp-items="Model.Departments" asp-for="Colaborator.DepartmentId"></select>
             <span asp-validation-for="Colaborator.DepartmentId" class="text-danger"></span>
         </div>
 
