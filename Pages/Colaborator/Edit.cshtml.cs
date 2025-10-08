@@ -54,8 +54,6 @@ namespace INVENTAR.IO.Pages.Colaborator
 
             try
             {
-                Console.WriteLine(Colaborator.DepartmentId);
-                _context.Colaborators.Update(Colaborator);
                 _context.Attach(Colaborator).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
             }
