@@ -17,10 +17,10 @@
         <table class="table table-hover table-responsive">
             <thead>
                 <tr>
-                    <th scope="col">@Html.DisplayNameFor(model => model.Colaborators[0].ColaboratorName)</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.Colaborators[0].ColaboratorEmail)</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.Colaborators[0].Department.DepartmentName)</th>
-                    <th scope="col"></th>
+                    <th class="col-4" scope="col">@Html.DisplayNameFor(model => model.Colaborators[0].ColaboratorName)</th>
+                    <th class="col-3" scope="col">@Html.DisplayNameFor( model => model.Colaborators[ 0 ].ColaboratorEmail )</th>
+                    <th class="col-3" scope="col">@Html.DisplayNameFor( model => model.Colaborators[ 0 ].Department.DepartmentName )</th>
+                    <th class="col-2" scope="col"></th>
                 </tr>
             </thead>
             <tbody>
@@ -30,7 +30,7 @@
                         <td>@Html.DisplayFor(model => colaborator.ColaboratorName)</td>
                         <td>@Html.DisplayFor(model => colaborator.ColaboratorEmail)</td>
                         <td>@Html.DisplayFor(model => colaborator.Department.DepartmentName)</td>
-                        <td align="right">
+                        <td style="display: -moz-inline-box" align="right">
                             <a asp-page="./Edit" asp-route-id="@colaborator.ColaboratorId" class="btn btn-outline-theme">Edit</a>
                             <a asp-page="./Delete" asp-route-id="@colaborator.ColaboratorId" class="btn btn-outline-theme">Delete</a>
                         </td>
