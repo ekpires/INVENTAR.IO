@@ -45,7 +45,7 @@ namespace INVENTAR.IO.Pages.Colaborator
 
             if (!ModelState.IsValid)
             {
-                TempData["Message"] = "Select a department";
+                TempData["Message"] = "The Department field is required.";
                 Departments = _context.Departments.Select(departments => new
                 SelectListItem
                 {
