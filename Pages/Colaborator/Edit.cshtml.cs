@@ -32,7 +32,6 @@ namespace INVENTAR.IO.Pages.Colaborator
             else
             {
                 Colaborator = colaborator;
-                Console.WriteLine(Colaborator.DepartmentId);
                 Departments = _context.Departments.Select(departments => new SelectListItem
                 {
                     Text = departments.DepartmentName,
@@ -69,7 +68,7 @@ namespace INVENTAR.IO.Pages.Colaborator
             }
             catch
             {
-                TempData["Message"] = $"{Colaborator.ColaboratorName} already exists";
+                TempData["Message"] = $"{Colaborator.ColaboratorEmail} is already in use";
             }
             return RedirectToPage("./Index");
         }
