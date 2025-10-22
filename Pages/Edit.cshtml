@@ -1,0 +1,41 @@
+﻿@page
+@model INVENTAR.IO.Pages.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+<div class="container">
+    <h1>@ViewData["Title"]</h1>
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Product.ProductId" />
+        @*<div class="mb-3">
+            <input type="text" asp-for="Department.DepartmentName" class="form-control" style="text-transform: uppercase;" />
+            <span asp-validation-for="Department.DepartmentName" class="text-danger"></span>
+        </div>
+        <div>
+        </div>
+    </form>
+ </div>*@
+        <div class="mb-3">
+            <input type="text" asp-for="Product.ProductName" class="form-control" style="text-transform: uppercase;" maxlength="50" />
+            <span asp-validation-for="Product.ProductName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <input type="text" asp-for="Product.ProductModel" class="form-control" style="text-transform: uppercase;" maxlength="50" />
+            <span asp-validation-for="Product.ProductModel" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <textarea type="text" asp-for="Product.ProductDescription" class="form-control" maxlength="300"></textarea>
+            <span asp-validation-for="Product.ProductDescription" class="text-danger"></span>
+        </div>
+        <div>
+            <a asp-page="./Index" class="btn btn-outline-theme">Back</a>
+            <input type="submit" class="btn btn-theme" value="Edit" />
+        </div>
+    </form>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
