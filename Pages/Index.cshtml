@@ -26,14 +26,15 @@
             <tbody>
                 @foreach (var product in Model.Products)
                 {
+                    <a asp-page="./Delete" asp-route-id="@product.ProductId">
                     <tr>
                         <td>@Html.DisplayFor(model => product.ProductName)</td>
                         <td>@Html.DisplayFor(model => product.ProductModel)</td>
                         <td style="display: -moz-inline-box" align="right">
                             <a asp-page="./Edit" asp-route-id="@product.ProductId" class="btn btn-outline-theme">Edit</a>
-                            <a asp-page="./Delete" asp-route-id="@product.ProductId" class="btn btn-outline-theme">Delete</a>
                         </td>
                     </tr>
+                    </a>
                 }
             </tbody>
         </table>
