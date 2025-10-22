@@ -1,0 +1,37 @@
+﻿@page
+@model INVENTAR.IO.Pages.Product.CreateModel
+@{
+    ViewData["Title"] = "Product";
+}
+<div class="container">
+    <h1>@ViewData["Title"]</h1>
+    <br />
+
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="Product.ProductName" class="form-label">Product</label>
+            <input type="text" asp-for="Product.ProductName" class="form-control" style="text-transform: uppercase;" maxlength="50" />
+            <span asp-validation-for="Product.ProductName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Product.ProductModel" class="form-label">Model</label>
+            <input type="text" asp-for="Product.ProductModel" class="form-control" style="text-transform: uppercase;" maxlength="50" />
+            <span asp-validation-for="Product.ProductModel" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Product.ProductDescription" class="form-label">Description</label>
+            <textarea type="text" asp-for="Product.ProductDescription" class="form-control" maxlength="300"></textarea>
+            <span asp-validation-for="Product.ProductDescription" class="text-danger"></span>
+        </div>
+        <div>
+            <a asp-page="./Index" class="btn btn-outline-theme">Back</a>
+            <input type="submit" class="btn btn-theme" value="Create" />
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
