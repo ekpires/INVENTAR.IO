@@ -88,17 +88,17 @@ namespace INVENTAR.IO.Migrations
 
                     b.Property<string>("ProductModel")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("ProductName")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("ProductId");
 
-                    b.HasIndex("ProductName")
+                    b.HasIndex("ProductModel")
                         .IsUnique();
 
                     b.ToTable("Products");

@@ -16,8 +16,8 @@ namespace INVENTAR.IO.Migrations
                 {
                     ProductId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ProductName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    ProductModel = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    ProductName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    ProductModel = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     ProductDescription = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false)
                 },
                 constraints: table =>
@@ -26,9 +26,9 @@ namespace INVENTAR.IO.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Products_ProductName",
+                name: "IX_Products_ProductModel",
                 table: "Products",
-                column: "ProductName",
+                column: "ProductModel",
                 unique: true);
         }
 

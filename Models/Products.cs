@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace INVENTAR.IO.Models
 {
-    [Index(nameof(ProductName), IsUnique = true)]
+    [Index(nameof(ProductModel), IsUnique = true)]
     public class Products
     {
         [Key]
@@ -14,12 +14,12 @@ namespace INVENTAR.IO.Models
         public int ProductId { get; set; }
 
         [Required]
-        [StringLength(100)]
+        [StringLength(50)]
         [DisplayName("Name")]
         public string ProductName { get; set; } = string.Empty;
 
         [Required]
-        [StringLength(100)]
+        [StringLength(50)]
         [DisplayName("Model")]
         public string ProductModel{ get; set; } = string.Empty;
 

@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace INVENTAR.IO.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20251021180903_ProductMigration")]
+    [Migration("20251022133022_ProductMigration")]
     partial class ProductMigration
     {
         /// <inheritdoc />
@@ -91,17 +91,17 @@ namespace INVENTAR.IO.Migrations
 
                     b.Property<string>("ProductModel")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("ProductName")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("ProductId");
 
-                    b.HasIndex("ProductName")
+                    b.HasIndex("ProductModel")
                         .IsUnique();
 
                     b.ToTable("Products");
