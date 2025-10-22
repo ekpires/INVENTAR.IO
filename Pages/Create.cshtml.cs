@@ -34,7 +34,7 @@ namespace INVENTAR.IO.Pages.Product
             }
             catch
             {
-                TempData["Message"] = $"{Product.ProductName} already exists";
+                TempData["Message"] = $"{Product.ProductModel} model already exists";
             }
             return RedirectToPage("./Index");
         }
