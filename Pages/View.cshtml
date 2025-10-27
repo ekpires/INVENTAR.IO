@@ -1,0 +1,21 @@
+﻿@page
+@model INVENTAR.IO.Pages.ViewModel
+@{
+    ViewData["Title"] = $"{Model.Product.ProductName}-{Model.Product.ProductModel}";
+}
+
+<div class="container">
+    <div class="list-header">
+        <h3 class="col-10">@ViewData["Title"]</h3>
+        <div class="col-2">
+            <a asp-page="Create" class="btn btn-theme">Add</a>
+            <a asp-page="Delete" asp-route-id="@Model.Product.ProductId" class="btn btn-theme">Delete</a>
+        </div>
+    </div>
+    <p>@Model.Product.ProductDescription</p>
+    @if (TempData["Message"] != null)
+    {
+        <p class="text-danger">@TempData["Message"]</p>
+    }
+    <br />
+</div>
