@@ -24,7 +24,7 @@
 				<input type="hidden" asp-for="Product.ProductId" />
 				@* <input class="form-control" id="confirmDelete" type="text" placeholder="To delete write &quot;@Html.DisplayFor( model => model.Departments.DepartmentName )&quot;" /> *@
 				<br />
-				<a asp-page="./View" asp-route-id="@Model.Product.ProductId" class="btn btn-outline-theme">Back</a>
+				<a asp-page="./Index" asp-route-id="@Model.Product.ProductId" class="btn btn-outline-theme">Back</a>
 				<input @* disabled *@ type="submit" class="btn btn-theme" value="Delete" />
 			</form>
 		</div>

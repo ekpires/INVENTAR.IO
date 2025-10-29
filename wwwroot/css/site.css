@@ -25,6 +25,18 @@ body {
     margin-bottom: 60px;
 }
 
+td a {
+    display: block;
+    padding: 0px;
+    text-decoration: none;
+    color: black;
+}
+
+.clicable-line:hover {
+    transform: scale(1.05);
+    font-weight: bold;
+}
+
 .teste-banner {
     background-color: var(--theme-color);
 }
