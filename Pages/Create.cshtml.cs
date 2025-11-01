@@ -20,7 +20,7 @@ namespace INVENTAR.IO.Pages.Product
         [BindProperty]
         public Products Product { get; set; } = default!;
 
-        public async Task<IActionResult> OnPost()
+        public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
                 return Page();
