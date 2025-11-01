@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace INVENTAR.IO.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20251022133022_ProductMigration")]
+    [Migration("20251101181450_ProductMigration")]
     partial class ProductMigration
     {
         /// <inheritdoc />
@@ -85,7 +85,6 @@ namespace INVENTAR.IO.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductId"));
 
                     b.Property<string>("ProductDescription")
-                        .IsRequired()
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
 

@@ -25,6 +25,6 @@ namespace INVENTAR.IO.Models
 
         [StringLength(300)]
         [DisplayName("Description")]
-        public string ProductDescription { get; set; } = string.Empty;
+        public string? ProductDescription { get; set; } = string.Empty;
     }
 }

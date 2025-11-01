@@ -18,7 +18,7 @@ namespace INVENTAR.IO.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ProductName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     ProductModel = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    ProductDescription = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false)
+                    ProductDescription = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: true)
                 },
                 constraints: table =>
                 {
