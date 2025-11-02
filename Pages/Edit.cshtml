@@ -8,14 +8,6 @@
     <form method="post">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <input type="hidden" asp-for="Product.ProductId" />
-        @*<div class="mb-3">
-            <input type="text" asp-for="Department.DepartmentName" class="form-control" style="text-transform: uppercase;" />
-            <span asp-validation-for="Department.DepartmentName" class="text-danger"></span>
-        </div>
-        <div>
-        </div>
-    </form>
- </div>*@
         <div class="mb-3">
             <input type="text" asp-for="Product.ProductName" class="form-control" style="text-transform: uppercase;" maxlength="50" />
             <span asp-validation-for="Product.ProductName" class="text-danger"></span>
