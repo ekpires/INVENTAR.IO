@@ -21,10 +21,12 @@ namespace INVENTAR.IO.Data
             modelBuilder.Entity<Colaborators>().Property(e => e.ColaboratorId).ValueGeneratedOnAdd();
             modelBuilder.Entity<Products>().HasKey(e => e.ProductId);
             modelBuilder.Entity<Products>().Property(e => e.ProductId).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Assets>().HasKey( e => e.AssetId );
         }
 
         public virtual DbSet<Departments> Departments { get; set; }
         public virtual DbSet<Colaborators> Colaborators { get; set; }
         public virtual DbSet<Products> Products { get; set; }
+        public virtual DbSet<Assets> Assets { get; set; }
     }
 }
