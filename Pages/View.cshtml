@@ -18,4 +18,30 @@
         <p class="text-danger">@TempData["Message"]</p>
     }
     <br />
+
+    <table class="table table-hover table-responsive">
+        <thead>
+            <tr>
+                <th class="col-2" scope="col">@Html.DisplayNameFor( model => model.Assets[ 0 ].AssetId)</th>
+                <th class="col-3" scope="col">@Html.DisplayNameFor( model => model.Assets[ 0 ].ColaboratorId)</th>
+                <th class="col-3" scope="col">@Html.DisplayNameFor( model => model.Assets[ 0 ].Colaborator.ColaboratorEmail)</th>
+                <th class="col-2" scope="col">@Html.DisplayNameFor( model => model.Assets[ 0 ].Colaborator.Department.DepartmentName)</th>
+                <th class="col-2" scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach( var asset in Model.Assets )
+            {
+                <tr class="clicable-line">
+                    <td><a asp-page="./View" asp-route-id="@asset.ProductId">@Html.DisplayFor( model => asset.AssetId )</a></td>
+                    <td><a asp-page="./View" asp-route-id="@asset.ProductId">@Html.DisplayFor( model => asset.Colaborator.ColaboratorName)</a></td>
+                    <td><a asp-page="./View" asp-route-id="@asset.ProductId">@Html.DisplayFor( model => asset.Colaborator.ColaboratorEmail)</a></td>
+                    <td><a asp-page="./View" asp-route-id="@asset.ProductId">@Html.DisplayFor( model => asset.Colaborator.Department.DepartmentName)</a></td>
+                    <td style="display: -moz-inline-box" align="right">
+                        <a asp-page="./Edit" asp-route-id="@asset.ProductId" class="btn btn-outline-theme">Edit</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
