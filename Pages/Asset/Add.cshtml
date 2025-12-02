@@ -13,12 +13,12 @@
     <form method="post">
         <div class="mb-3">
             <label asp-for="Asset.AssetId" class="form-label">Asset ID</label>
-            <input type="text" asp-for="Asset.AssetId" class="form-control" style="text-transform: uppercase;" />
+            <input type="text" asp-for="Asset.AssetId" class="form-control" />
             <span asp-validation-for="Asset.AssetId" class="text-danger"></span>
         </div>
         <div class="mb-3">
             <label asp-for="Asset.ColaboratorId" class="form-label">Department</label>
-            <select class="form-select" aria-label="Department" asp-items="Model.Colaborators" asp-for="Asset.ColaboratorId">
+            <select class="form-select" aria-label="Colaborator" asp-items="Model.Colaborators" asp-for="Asset.ColaboratorId">
                 <option>Select a colaborator</option>
             </select>
         </div>
