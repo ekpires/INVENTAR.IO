@@ -6,11 +6,8 @@
 
 <div class="container">
     <div class="list-header">
-        <h3 class="col-10">@ViewData["Title"]</h3>
-        <div class="col-2">
-            <a asp-page="Create" class="btn btn-theme">Add</a>
-            <a asp-page="Delete" asp-route-id="@Model.Product.ProductId" class="btn btn-theme">Delete</a>
-        </div>
+        <h3>@ViewData["Title"]</h3>
+            <a asp-page="./Asset/Add" asp-route-id="@Model.Product.ProductId" class="btn btn-theme">Add</a>
     </div>
     <p>@Model.Product.ProductDescription</p>
     @if (TempData["Message"] != null)
@@ -37,9 +34,6 @@
                     <td><a asp-page="./View" asp-route-id="@asset.ProductId">@Html.DisplayFor( model => asset.Colaborator.ColaboratorName)</a></td>
                     <td><a asp-page="./View" asp-route-id="@asset.ProductId">@Html.DisplayFor( model => asset.Colaborator.ColaboratorEmail)</a></td>
                     <td><a asp-page="./View" asp-route-id="@asset.ProductId">@Html.DisplayFor( model => asset.Colaborator.Department.DepartmentName)</a></td>
-                    <td style="display: -moz-inline-box" align="right">
-                        <a asp-page="./Edit" asp-route-id="@asset.ProductId" class="btn btn-outline-theme">Edit</a>
-                    </td>
                 </tr>
             }
         </tbody>

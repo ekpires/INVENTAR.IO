@@ -13,7 +13,7 @@ namespace INVENTAR.IO.Models
 
         [DisplayName("Owner"), ForeignKey(nameof(Colaborators.ColaboratorId))]
         public int? ColaboratorId { get; set; }
-        public virtual Colaborators? Colaborator { get; set; } = default!;
+        public virtual Colaborators Colaborator { get; set; } = default!;
     
         [Required, ForeignKey(nameof(Products.ProductId)), DisplayName("Product")]
         public int ProductId { get; set; }
